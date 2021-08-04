@@ -27,7 +27,7 @@ public class HomePageTest extends TestBase {
 		//after each test case--close the browser
 	}
 	@BeforeMethod
-	public void setup() {
+	public void setup() throws InterruptedException {
 		initialization();
 		testUtil = new TestUtil();
 		loginpage= new LoginPage ();

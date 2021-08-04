@@ -9,7 +9,7 @@ import com.crm.qa.base.TestBase;
 public class LoginPage extends TestBase {
 	
 	//Page Factory - Object repository
-	@FindBy(xpath="//span[contains(text(), 'Log In')]")
+	@FindBy(linkText= "Log In")
 	WebElement Login;
 	@FindBy(name="email")
 	WebElement email;
@@ -19,7 +19,7 @@ public class LoginPage extends TestBase {
     WebElement submit;
 	@FindBy(xpath ="//a[contains(text(), 'Sign Up')]")
 	WebElement signup;
-    @FindBy(xpath="(//a[contains(@class, 'brand-name')])[1]")
+    @FindBy(xpath="/html/body/div[2]/div/div[1]/a/img")
     WebElement crmLogo;
 
     public LoginPage() {
@@ -32,7 +32,8 @@ public class LoginPage extends TestBase {
     public boolean validateCRMImage() {
     	return crmLogo.isDisplayed();
     }
-    public HomePage login (String un, String pwd) {
+    public HomePage login (String un, String pwd) throws InterruptedException {
+    	Thread.sleep(10000);
     	Login.click();
     	email.sendKeys(un);
     	pass.sendKeys(pwd);

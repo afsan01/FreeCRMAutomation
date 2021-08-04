@@ -26,7 +26,7 @@ public class ContactsPageTest extends TestBase{
 		super();
 	}
 	@BeforeMethod
-	public void setup() {
+	public void setup() throws InterruptedException {
 		initialization();
 		testUtil = new TestUtil();
 		loginpage= new LoginPage ();
